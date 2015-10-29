@@ -147,7 +147,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var vm = this.vm
 	      var el = this.el
 	      var $validator = vm[componentName]
-	      var keypath = this._keypath = this._parseModelAttribute(el.getAttribute(Vue.config.prefix + 'model'))
+	      var keypath = this._keypath = this._parseModelAttribute(el.getAttribute('v-model'))
 	      var validator = this.arg ? this.arg : this.expression
 	      var arg = this.arg ? this.expression : null
 
@@ -180,7 +180,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (readyEvent && !$validator._isRegistedReadyEvent(keypath)) {
 	        $validator._addReadyEvents(keypath, this._checkParam('wait-for'))
 	      }
-	      
+
 	      this._setupValidator($validator, keypath, validation, validator, el, arg, init)
 	    },
 
@@ -205,7 +205,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    },
 
-	     
+
 	    unbind: function () {
 	      if (this._ignore) { return }
 
@@ -694,7 +694,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return ret
 	      })
 	      this._defineInvalidProperty(last)
-	      
+
 	      this._validators[keypath] = []
 
 	      this._watchModel(keypath, function (val, old) {
@@ -789,7 +789,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        delete this._validatorWatchers[keypath]
 	      }
 	    },
-	    
+
 	    _addReadyEvents: function (id, event) {
 	      this._readyEvents[id] = event
 	    },
@@ -826,7 +826,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          })
 	      }
 	    },
-	    
+
 	    _invokeValidator: function (validator, val, arg, fn) {
 	      var future = validator.call(this, val, arg)
 	      if (typeof future === 'function') { // async

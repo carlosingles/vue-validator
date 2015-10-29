@@ -118,7 +118,7 @@ function install (Vue, options) {
       if (readyEvent && !$validator._isRegistedReadyEvent(keypath)) {
         $validator._addReadyEvents(keypath, this.param('wait-for'))
       }
-      
+
       this._setupValidator($validator, keypath, validation, validator, el, arg, init)
     },
 
@@ -143,7 +143,7 @@ function install (Vue, options) {
       }
     },
 
-     
+
     unbind: function () {
       if (this._ignore) { return }
 
